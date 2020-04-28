@@ -15,7 +15,7 @@ def nyc_pigeon_organizer(data)
         while val_count < data[data.keys[count]].values[count1].length do
           
           #for each terminal name, get the info for this chain.
-          pige_name = data[data.keys[count]].values[count1][val_count].to_s
+          pige_name = data[data.keys[count]].values[count1][val_count].to_s.split
           new_pige_atr = data.keys[count].to_sym
           new_pige_value = data[data.keys[count]].keys[count1].to_s.split
 
