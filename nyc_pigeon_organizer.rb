@@ -1,6 +1,7 @@
 def nyc_pigeon_organizer(data)
   # write your code here!
-    #this will store the new reversed hash
+  
+  #this will store the new reversed hash
   new_pigeon_data = Hash.new
 
   #start iterating over the current hash
@@ -22,11 +23,16 @@ def nyc_pigeon_organizer(data)
           if new_pigeon_data.include? pige_name
 
             if new_pigeon_data[pige_name].include? new_pige_atr
-              new_values = new_pigeon_data[pige_name].values
+              new_values = Array.new
+              new_values << new_pigeon_data[pige_name].values
               new_values << new_pige_value
               new_pigeon_data[pige_name][new_pige_atr] = new_values.flatten
+              
             else
-                new_pigeon_data[pige_name][new_pige_atr] = new_pige_value
+              new_value = Array.new
+              new_value << new_pige_value
+              new_pigeon_data[pige_name][new_pige_atr] = new_value
+              
            end
 
           else
@@ -42,9 +48,8 @@ def nyc_pigeon_organizer(data)
 
         count1 += 1
       end
+      
       count += 1
-
-  end
-  
+    end
   new_pigeon_data
 end
